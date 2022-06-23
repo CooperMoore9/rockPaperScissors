@@ -7,13 +7,21 @@
             // - popup window for user to provide input
             // - store input in variable
             // - make input case-insensitive
-    let playerSelection = prompt('Enter: Rock, Paper, or Scissors').toLowerCase().trim();
+    
             // - if user didn't type any of the expected answers alert 'not a answer' and let them type again
+
+    function playerSelectionFunction(){
+    let playerSelection = prompt('Enter: Rock, Paper, or Scissors').toLowerCase().trim();
     if(playerSelection === 'rock' || playerSelection === 'paper'|| playerSelection === 'scissors'){
-        console.log('right!');
+        return playerSelection;
     } else {
-        console.log('wrong!');
+        alert('wrong')
+        return playerSelectionFunction();
     }
+}
+
+    let playerChoice = playerSelectionFunction();
+    console.log(playerChoice);
 
         // - use input to play against bot
         // - get random result from bot
@@ -25,5 +33,3 @@
         // - compare results
         // - console.log() results tell user if they won or lost
         // - 5 rounds total; at the end report who won more rounds
-
-    console.log(playerSelection)
