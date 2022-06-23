@@ -18,8 +18,6 @@
         }
     }
 
-    let playerChoice = playerSelectionF();
-
         // - get random result from bot
                 // - get random number
                 // - console.log(Math.floor(Math.random()* 3));
@@ -38,40 +36,49 @@
     }
 
 
-    let botChoice = botSelectionF();
-
         // - use input from bot and user to play
         // - compare results
         // - console.log() results tell user if they won or lost
     function playRound(playerChoice, botChoice){
+        let winner = '';
         if(playerChoice === botChoice){
-            console.log('tie')
+            console.log('tie');
+            winner = 'tie'
 
         }else if(playerChoice === 'rock' && botChoice !== 'paper'){
-            console.log('player win');
-            
+            console.log(playerChoice + ' beats ' + botChoice + ', you win');
+            winner = 'player'
+
         }else if(playerChoice === 'paper' && botChoice !== 'scissors'){
-            console.log('player win');
+            console.log(playerChoice + ' beats ' + botChoice + ', you win');
+            winner = 'player'
 
         }else if(playerChoice === 'scissors' && botChoice !== 'rock'){
-            console.log('player win')
+            console.log(playerChoice + ' beats ' + botChoice + ', you win');
+            winner = 'player'
 
         }else{
-            console.log('bot win')
+            console.log(botChoice + ' beats ' + playerChoice + ', you lose');
+            winner = 'bot'
+
         }
+
+        return winner;
 
     }   
 
-    console.log('player chose ' + playerChoice);
-    console.log('bot chose ' + botChoice);
-    // playRound(playerChoice, botChoice);
 
         // - 5 rounds total; at the end report who won more rounds
 
-function game(){
-    for (let i = 0; i < 5; i++){
-        
+    function playGame(){
+        let playerChoice = playerSelectionF();
+        let botChoice = botSelectionF();
+        console.log('player chose ' + playerChoice);
+        console.log('bot chose ' + botChoice);
+        playRound(playerChoice, botChoice);
     }
+    for(let i = 0; i < 5; i++){
 
+        playGame();
 
-}
+    }
