@@ -43,30 +43,24 @@
                 // - compare results
                 // - console.log() results tell user if they won or lost
             function playRound(playerChoice, botChoice){
-                let winner = '';
                 if(playerChoice === botChoice){
                     console.log('tie');
-                    winner = 'tie'
+                    return 'tie';
+                    // can just return things rather than setting variables
         
                 }else if(playerChoice === 'rock' && botChoice !== 'paper'){
                     console.log(playerChoice + ' beats ' + botChoice + ', you win');
-                    winner = 'player'
-        
+                    return 'player';
                 }else if(playerChoice === 'paper' && botChoice !== 'scissors'){
                     console.log(playerChoice + ' beats ' + botChoice + ', you win');
-                    winner = 'player'
-        
+                    return 'player';
                 }else if(playerChoice === 'scissors' && botChoice !== 'rock'){
                     console.log(playerChoice + ' beats ' + botChoice + ', you win');
-                    winner = 'player'
-        
+                    return 'player';
                 }else{
                     console.log(botChoice + ' beats ' + playerChoice + ', you lose');
-                    winner = 'bot'
-        
+                    return 'bot';
                 }
-        
-                return winner;
         
             }   
         
