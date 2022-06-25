@@ -16,7 +16,7 @@
                 if(playerSelection === 'rock' || playerSelection === 'paper'|| playerSelection === 'scissors'){
                     return playerSelection;
                 } else {
-                    alert('wrong')
+                    alert('wrong');
                     return playerSelectionF();
                 }
             }
@@ -34,7 +34,7 @@
                 }else if(botNumber === 1){
                     return 'paper';
                 }else if(botNumber === 2){
-                    return 'scissors'
+                    return 'scissors';
                 }
             }
         
