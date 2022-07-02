@@ -23,7 +23,7 @@ function playerSelectionF(){
     const clickedButton = document.querySelectorAll('button');
     clickedButton.forEach((button) => {
         button.addEventListener('click', () => {
-            alert(button.className)
+            return playerChoice = button.className
         })
     })
 }
@@ -69,7 +69,6 @@ function playRound(playerChoice, botChoice){
      // - 5 rounds total; at the end report who won more rounds
 
 function playGame(){
-    let playerChoice = playerSelectionF();
     let botChoice = botSelectionF();
     console.log('player chose ' + playerChoice);
     console.log('bot chose ' + botChoice);
@@ -105,11 +104,9 @@ function playGame(){
     // DOM MANIPULATION
     // I don't really know what I'm doing
 
+playerSelectionF();
 const btn = document.querySelector('.buttons');
-
 btn.addEventListener('click', () =>{
-    playerSelectionF();
-    botSelectionF();
     playGame();
 
 })
