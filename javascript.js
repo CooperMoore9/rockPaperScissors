@@ -6,27 +6,29 @@
 let playerScore = 0;
 let botScore = 0;
 
-        // - Get input from user
-            // - popup window for user to provide input
-            // - store input in variable
-            // - make input case-insensitive
-            // - if user didn't type any of the expected answers alert 'not a answer' and let them type again
+    // - Get input from user
+        // - popup window for user to provide input
+        // - store input in variable
+        // - make input case-insensitive
+        // - if user didn't type any of the expected answers alert 'not a answer' and let them type again
+
+            // - get random result from bot
+                    // - get random number
+                    // - console.log(Math.floor(Math.random()* 3));
+                        // - gets random number between 0-2
+            // - assign number to a choice in rps
+            // - return choice for round
+
 function playerSelectionF(){
-    let playerSelection = prompt('Enter: Rock, Paper, or Scissors').toLowerCase().trim();
-    if(playerSelection === 'rock' || playerSelection === 'paper'|| playerSelection === 'scissors'){
-        return playerSelection;
-    } else {
-        alert('wrong');
-        return playerSelectionF();
-    }
+    const clickedButton = document.querySelectorAll('button');
+    clickedButton.forEach((button) => {
+        button.addEventListener('click', () => {
+            alert(button.className)
+        })
+    })
 }
-        
-                // - get random result from bot
-                        // - get random number
-                        // - console.log(Math.floor(Math.random()* 3));
-                            // - gets random number between 0-2
-                // - assign number to a choice in rps
-                // - return choice for round
+
+
 function botSelectionF(){
     let botNumber = Math.floor(Math.random() * 3)
     if(botNumber === 0){
@@ -39,14 +41,14 @@ function botSelectionF(){
 }
         
         
-                // - use input from bot and user to play
-                // - compare results
-                // - console.log() results tell user if they won or lost
+    // - use input from bot and user to play
+    // - compare results
+    // - console.log() results tell user if they won or lost
 function playRound(playerChoice, botChoice){
     if(playerChoice === botChoice){
         console.log('tie');
         return 'tie';
-        // can just return things rather than setting variables
+    // can just return things rather than setting variables
 
     }else if(playerChoice === 'rock' && botChoice !== 'paper'){
         console.log(playerChoice + ' beats ' + botChoice + ', you win');
@@ -64,9 +66,8 @@ function playRound(playerChoice, botChoice){
 
 }   
         
-                // - 5 rounds total; at the end report who won more rounds
+     // - 5 rounds total; at the end report who won more rounds
 
-        
 function playGame(){
     let playerChoice = playerSelectionF();
     let botChoice = botSelectionF();
@@ -81,8 +82,6 @@ function playGame(){
     }
 
 }
-
-
 
 
 // for(let i = 0; i < 5; i++){
@@ -103,10 +102,17 @@ function playGame(){
 // }
 
 
-// DOM MANIPULATION
-// I don't really know what I'm doing
+    // DOM MANIPULATION
+    // I don't really know what I'm doing
 
-            const rockButton = document.querySelector('.rock');
-            rockButton.addEventListener('click', () => {
-                console.log('ROCK!')
-            })
+const btn = document.querySelector('.buttons');
+
+btn.addEventListener('click', () =>{
+    playerSelectionF();
+    botSelectionF();
+    playGame();
+
+})
+
+    // DOM MANIPULATION
+    // I don't really know what I'm doing
