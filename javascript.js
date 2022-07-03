@@ -23,7 +23,7 @@ function playerSelectionF(){
     const clickedButton = document.querySelectorAll('button');
     clickedButton.forEach((button) => {
         button.addEventListener('click', () => {
-            return playerChoice = button.className
+            // return playerChoice = button.className DOES NOT WORK idk what do
         })
     })
 }
@@ -51,16 +51,12 @@ function playRound(playerChoice, botChoice){
     // can just return things rather than setting variables
 
     }else if(playerChoice === 'rock' && botChoice !== 'paper'){
-        console.log(playerChoice + ' beats ' + botChoice + ', you win');
         return 'player';
     }else if(playerChoice === 'paper' && botChoice !== 'scissors'){
-        console.log(playerChoice + ' beats ' + botChoice + ', you win');
         return 'player';
     }else if(playerChoice === 'scissors' && botChoice !== 'rock'){
-        console.log(playerChoice + ' beats ' + botChoice + ', you win');
         return 'player';
     }else{
-        console.log(botChoice + ' beats ' + playerChoice + ', you lose');
         return 'bot';
     }
 
@@ -70,10 +66,8 @@ function playRound(playerChoice, botChoice){
 
 function playGame(){
     let botChoice = botSelectionF();
-    console.log('player chose ' + playerChoice);
-    console.log('bot chose ' + botChoice);
     let winner = playRound(playerChoice, botChoice);
-    
+
     if(winner === 'player'){
         playerScore++;
     }else if (winner === 'bot'){
@@ -103,13 +97,6 @@ function playGame(){
 
     // DOM MANIPULATION
     // I don't really know what I'm doing
-
-playerSelectionF();
-const btn = document.querySelector('.buttons');
-btn.addEventListener('click', () =>{
-    playGame();
-
-})
 
     // DOM MANIPULATION
     // I don't really know what I'm doing
