@@ -2,9 +2,13 @@
 
     // TODO
 
+
+    // make button run function
+
             
 let playerScore = 0;
 let botScore = 0;
+let playerChoice = '';
 
     // - Get input from user
         // - popup window for user to provide input
@@ -19,14 +23,14 @@ let botScore = 0;
             // - assign number to a choice in rps
             // - return choice for round
 
-function playerSelectionF(){
-    const clickedButton = document.querySelectorAll('button');
+
+const clickedButton = document.querySelectorAll('button');
     clickedButton.forEach((button) => {
         button.addEventListener('click', () => {
-            // return playerChoice = button.className DOES NOT WORK idk what do
-        })
+        playerChoice = button.id;
+        playGame();
     })
-}
+})
 
 
 function botSelectionF(){
@@ -46,7 +50,6 @@ function botSelectionF(){
     // - console.log() results tell user if they won or lost
 function playRound(playerChoice, botChoice){
     if(playerChoice === botChoice){
-        console.log('tie');
         return 'tie';
     // can just return things rather than setting variables
 
@@ -61,17 +64,28 @@ function playRound(playerChoice, botChoice){
     }
 
 }   
-        
+  
      // - 5 rounds total; at the end report who won more rounds
 
 function playGame(){
     let botChoice = botSelectionF();
     let winner = playRound(playerChoice, botChoice);
+    document.getElementById('playerScore').textContent = `${playerScore}`
+    document.getElementById('botScore').textContent = `${botScore}`
 
     if(winner === 'player'){
         playerScore++;
     }else if (winner === 'bot'){
         botScore++;
+    }
+
+    if(playerScore === 5 && botScore === 5){
+        document.getElementById('middleText').textContent = `Tied`;
+    }
+    else if(playerScore === 5 && botScore < 5){
+        document.getElementById('middleText').textContent = `player winnah`;
+    }else if(playerScore < 5 && botScore === 5){
+        document.getElementById('middleText').textContent = `bot winnah`;
     }
 
 }

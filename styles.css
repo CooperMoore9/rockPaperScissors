@@ -7,6 +7,12 @@ html {
     margin: 0;
   }
 
+  #text {
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+  }
+
   body {
     display: flex;
     flex: 1;
@@ -14,10 +20,9 @@ html {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
   }
 
-  .buttons {
+  #buttons {
     display: flex;
   }
 
