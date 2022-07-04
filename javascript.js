@@ -1,6 +1,7 @@
 // Rock Paper Scissors
 
     // TODO
+    // make site look better
 
 
     // make button run function
@@ -75,7 +76,6 @@ function disableButtons(){
      // - 5 rounds total; at the end report who won more rounds
 
 function playGame(){
-    console.log(playerScore);
     let botChoice = botSelectionF();
     let winner = playRound(playerChoice, botChoice);
     document.getElementById('playerScore').textContent = `Player Score = ${playerScore}` ;
