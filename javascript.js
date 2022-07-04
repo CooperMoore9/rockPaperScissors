@@ -6,8 +6,8 @@
     // make button run function
 
             
-let playerScore = 0;
-let botScore = 0;
+let playerScore = 1;
+let botScore = 1;
 let playerChoice = '';
 
     // - Get input from user
@@ -64,28 +64,39 @@ function playRound(playerChoice, botChoice){
     }
 
 }   
-  
+
+function disableButtons(){
+
+    document.getElementById('rock').disabled = true;
+    document.getElementById('paper').disabled = true;
+    document.getElementById('scissors').disabled = true;
+
+}
      // - 5 rounds total; at the end report who won more rounds
 
 function playGame(){
+    console.log(playerScore);
     let botChoice = botSelectionF();
     let winner = playRound(playerChoice, botChoice);
-    document.getElementById('playerScore').textContent = `${playerScore}`
-    document.getElementById('botScore').textContent = `${botScore}`
+    document.getElementById('playerScore').textContent = `Player Score = ${playerScore}` ;
+    document.getElementById('botScore').textContent = `Bot Score = ${botScore}` ;
+
+    if(playerScore === 5 && botScore === 5){
+        document.getElementById('middleText').textContent = `Tied`;
+        disableButtons();
+    }
+    else if(playerScore === 5 && botScore < 5){
+        document.getElementById('middleText').textContent = `player winnah`;
+        disableButtons();
+    }else if(playerScore < 5 && botScore === 5){
+        document.getElementById('middleText').textContent = `bot winnah`;
+        disableButtons();
+    }
 
     if(winner === 'player'){
         playerScore++;
     }else if (winner === 'bot'){
         botScore++;
-    }
-
-    if(playerScore === 5 && botScore === 5){
-        document.getElementById('middleText').textContent = `Tied`;
-    }
-    else if(playerScore === 5 && botScore < 5){
-        document.getElementById('middleText').textContent = `player winnah`;
-    }else if(playerScore < 5 && botScore === 5){
-        document.getElementById('middleText').textContent = `bot winnah`;
     }
 
 }
