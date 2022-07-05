@@ -50,6 +50,8 @@ function disableButtons(){
 function playGame(){
     let botChoice = botSelectionF();
     let winner = playRound(playerChoice, botChoice);
+    console.log(playerChoice);
+    console.log(botChoice);
     
     document.getElementById('playerScore').textContent = `Player Score = ${playerScore}` ;
     document.getElementById('botScore').textContent = `Bot Score = ${botScore}` ;

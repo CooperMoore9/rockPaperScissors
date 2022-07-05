@@ -9,8 +9,15 @@ html {
 
   #text {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100vw;
+  }
+
+  .box {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    
   }
 
   body {
@@ -22,10 +29,6 @@ html {
     align-items: center;
   }
 
-  #buttons {
-    display: flex;
-  }
-
   button {
     display: flex;
     justify-content: center;
@@ -33,5 +36,5 @@ html {
     font-size: 32px;
     width: 200px;
     height: 100px;
-    margin: 2em;
+    margin: 0.5em;
   }
