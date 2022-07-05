@@ -5,6 +5,7 @@
 let playerScore = 0;
 let botScore = 0;
 let playerChoice = '';
+const body = document.querySelector('body')
 
 const clickedButton = document.querySelectorAll('button');
     clickedButton.forEach((button) => {
@@ -13,6 +14,8 @@ const clickedButton = document.querySelectorAll('button');
         playGame();
     })
 })
+
+
 
 
 function botSelectionF(){
@@ -45,6 +48,21 @@ function disableButtons(){
     document.getElementById('rock').disabled = true;
     document.getElementById('paper').disabled = true;
     document.getElementById('scissors').disabled = true;
+    restartButton();
+}
+
+function restartButton(){
+    if(document.getElementById('rock').disabled === true){
+        const reload = document.createElement('button');
+        reload.textContent = 'RESTART';
+        reload.classList.add('restartButton')
+        body.appendChild(reload);
+
+        reload.addEventListener('click', () =>  {
+            location.reload();
+        })
+
+    }
 }
 
 function playGame(){
