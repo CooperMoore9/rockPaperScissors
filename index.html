@@ -9,17 +9,28 @@
     <script src="./javascript.js" defer></script>
 </head>
 <body>
+    <div id="whoWonTheRound"> 
+
+        Start game by choosing your Weapon
+
+    </div>
 
     <div id="text">
-        <div id="playerScore">Player Score = 0</div>    
-        <div id="middleText">Who Will Win?</div>
-        <div id="botScore">Bot Score = 0</div>
+        <div class="box">
+            <div id="playerScore">Player Score = 0</div>
+            <button id="rock">ROCK</button>
+        </div>
+
+        <div class="box">
+            <div id="middleText"></div>
+            <button id="paper">PAPER</button>
+        </div>
+
+        <div class="box">
+            <div id="botScore">Bot Score = 0</div>
+            <button id="scissors">SCISSORS</button>
+        </div>
     </div>
-    <div id="buttons">
-        <button id="rock">ROCK</button>
-        <button id="paper">PAPER</button>
-        <button id="scissors">SCISSORS</button>
-    </div>
-    
+
 </body>
 </html>

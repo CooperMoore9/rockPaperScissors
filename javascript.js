@@ -2,8 +2,8 @@
     // TODO
     // make site look better
             
-let playerScore = 1;
-let botScore = 1;
+let playerScore = 0;
+let botScore = 0;
 let playerChoice = '';
 
 const clickedButton = document.querySelectorAll('button');
@@ -50,6 +50,16 @@ function disableButtons(){
 function playGame(){
     let botChoice = botSelectionF();
     let winner = playRound(playerChoice, botChoice);
+
+    if(winner === 'player'){
+        playerScore++;
+        document.getElementById('whoWonTheRound').textContent = `Player chose ${playerChoice}, bot chose ${botChoice}, Player Wins!`
+    }else if (winner === 'bot'){
+        botScore++;
+        document.getElementById('whoWonTheRound').textContent = `Player chose ${playerChoice}, Bot chose ${botChoice}, Bot Wins!`
+    }else{
+        document.getElementById('whoWonTheRound').textContent = `Player chose ${playerChoice}, bot chose ${botChoice}, tie`
+    }
     
     document.getElementById('playerScore').textContent = `Player Score = ${playerScore}` ;
     document.getElementById('botScore').textContent = `Bot Score = ${botScore}` ;
@@ -64,12 +74,6 @@ function playGame(){
     }else if(playerScore < 5 && botScore === 5){
         document.getElementById('middleText').textContent = `bot winnah`;
         disableButtons();
-    }
-
-    if(winner === 'player'){
-        playerScore++;
-    }else if (winner === 'bot'){
-        botScore++;
     }
 
 }
