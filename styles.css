@@ -7,6 +7,14 @@ html {
     margin: 0;
   }
 
+  #whoWonTheRound {
+    margin-bottom: 2em;
+  }
+  
+  #middleText {
+    min-height: 18px;
+  }
+
   #text {
     display: flex;
     justify-content: space-evenly;
